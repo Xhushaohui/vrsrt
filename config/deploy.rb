@@ -3,8 +3,8 @@ lock '3.6.1'
 
 set :application, 'vrsrt'
 set :repo_url, 'git@github.com:Xhushaohui/vrsrt.git'
-set :deploy_to, "/home/chris/vrsrt"
-set :user, "chris"
+set :deploy_to, "/opt/www/vrsrt"
+set :user, "deploy"
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
 
 # Default branch is :master
@@ -37,17 +37,18 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-namespace :deploy_to do 
-	%w[start stop restart].each do |command|
-		desc 'Manage Unicorn'
-		task command do 
-			on roles(:app), in: :sequence, wait: 1 do 
-				execute "/etc/init.d/unicorn_#{fetch(:application)} #{command}"
-			end
-		end
-	end
+namespace :deploy do
 
-	after :publishing, :restart
+  %w[start stop restart].each do |command|
+    desc 'Manage Unicorn'
+    task command do
+      on roles(:app), in: :sequence, wait: 1 do
+        execute "/etc/init.d/unicorn_#{fetch(:application)} #{command}"
+      end      
+    end
+  end
+
+  after :publishing, :restart
 
 	after :restart, :clear_cache do |
 		on roles(:web), in: :groups, limit: 3, wait: 10 do
