@@ -7,18 +7,21 @@
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
   </head>
   <body>
-    <video autoplay mute loop>
+<!--     <video autoplay mute loop>
         <source src="main-show-video.mp4" type="video/mp4">
-    </video>
-
+    </video> -->
+    <div>
+    	<%= video_tag "main-show-video-mini.mp4",type: "video/mp4", :controls => false, :autobuffer => true, :autoplay => true, :loop => true, :id => "home-video" %>
+    </div>
+		
     <div class="jumbotron">
       <div class="container">
         <div class="header">
           <div class="row">
             
             <div class="col-md-1">
-              <img src="logo.png" height="45px" width="40px" />
-              
+              <!-- <img src="logo.png" height="45px" width="40px" /> -->
+              <%= image_tag("logo.png", :size => "40x45")%>
             </div>
             
             <div class="col-md-4 slogan">
@@ -60,30 +63,14 @@
         <div class="row">
           <div class="col-md-8">
             <div class="thumbnail">
-              <img src="dili.jpg">
+              <!-- <img src="dili.jpg"> -->
+              <%= image_tag "dili.jpg"%>
             </div>
           </div>
           <div class="col-md-4">
             <div class="thumbnail">
-              <img src="dili-2.jpg">
-            </div>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <img src="shengwu.jpg">
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <img src="body.jpg">
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <img src="ocean.jpg">
+              <!-- <img src="dili-2.jpg"> -->
+              <%= image_tag "dili-2.jpg"%>
             </div>
           </div>
         </div>
@@ -91,12 +78,35 @@
         <div class="row">
           <div class="col-md-4">
             <div class="thumbnail">
-              <img src="wuli.jpg">
+              <!-- <img src="shengwu.jpg"> -->
+              <%= image_tag "shengwu.jpg"%>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <img src="body.jpg"> -->
+              <%= image_tag "body.jpg"%>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <img src="ocean.jpg"> -->
+              <%= image_tag "ocean.jpg"%>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <img src="wuli.jpg"> -->
+              <%= image_tag "wuli.jpg"%>
             </div>
           </div>
           <div class="col-md-8">
             <div class="thumbnail">
-              <img src="starchart.jpg">
+              <!-- <img src="starchart.jpg"> -->
+              <%= image_tag "starchart.jpg"%>
             </div>
           </div>
         </div>
@@ -104,17 +114,20 @@
         <div class="row">
           <div class="col-md-4">
             <div class="thumbnail">
-              <img src="huoyan.jpg">
+              <!-- <img src="huoyan.jpg"> -->
+              <%= image_tag "huoyan.jpg"%>
             </div>
           </div>
           <div class="col-md-4">
             <div class="thumbnail">
-              <img src="huagong.jpg">
+              <!-- <img src="huagong.jpg"> -->
+              <%= image_tag "huagong.jpg"%>
             </div>
           </div>
           <div class="col-md-4">
             <div class="thumbnail">
-              <img src="huaxue.jpg">
+              <!-- <img src="huaxue.jpg"> -->
+              <%= image_tag "huaxue.jpg"%>
             </div>
           </div>
         </div>
