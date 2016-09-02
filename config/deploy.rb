@@ -2,7 +2,7 @@
 lock '3.6.1'
 
 set :application, 'vrsrt'
-set :repo_url, 'git@github.com:Xhushaohui/vrsrt.git'
+set :repo_url, 'https://github.com/Xhushaohui/vrsrt.git'
 set :deploy_to, "/opt/www/vrsrt"
 set :user, "deploy"
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
